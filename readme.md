@@ -6,7 +6,7 @@
 
 An elegant and interactive **News Reader** built with **Python**, **Streamlit**, and **NewsAPI**. Search the latest news on any topic with customizable filters, beautiful layouts, and an intuitive user interface.
 
-<img src="preview.jpeg" alt="News Reader Preview" width="900">
+<img src="assets/preview.jpeg" alt="News Reader Preview" width="900">
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
@@ -72,7 +72,7 @@ Every article includes:
 # 📸 Preview
 
 <p align="center">
-<img src="preview.jpeg" width="950">
+<img src="assets/preview.jpeg" width="950">
 </p>
 
 ---
