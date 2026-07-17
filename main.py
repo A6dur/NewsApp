@@ -99,13 +99,20 @@ with st.sidebar:
 
     default_key = secrets_key or env_key
 
+    if not default_key:
+        st.info(
+            "🔑 You'll need a free NewsAPI key to use this app.\n\n"
+            "Get one at **[newsapi.org](https://newsapi.org/register)** "
+            "(takes about 30 seconds), then paste it below."
+        )
+
     api_key = st.text_input(
         "NewsAPI Key",
         value=default_key,
         type="password",
-        help="Get a free key at newsapi.org. Stored only for this session — "
-             "not saved anywhere. Prefer setting NEWSAPI_KEY as an env var "
-             "or in .streamlit/secrets.toml instead of pasting it here.",
+        help="Get a free key at https://newsapi.org. Stored only for this "
+             "session — not saved anywhere. Prefer setting NEWSAPI_KEY as an "
+             "env var or in .streamlit/secrets.toml instead of pasting it here.",
     )
 
     st.markdown("---")
@@ -195,7 +202,14 @@ st.markdown(
 articles = st.session_state.articles
 
 if not articles:
-    st.info("👈 Enter a topic in the sidebar and click **Search News** to get started.")
+    if not api_key:
+        st.info(
+            "🔑 To get started, grab a free API key from "
+            "**[newsapi.org](https://newsapi.org/register)**, paste it into the "
+            "sidebar, then enter a topic and hit **Search News**."
+        )
+    else:
+        st.info("👈 Enter a topic in the sidebar and click **Search News** to get started.")
 else:
     st.success(f"Found {len(articles)} articles for **{st.session_state.last_query}**")
 
